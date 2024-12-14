@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+    .hero {
+      padding: 6rem 1rem;
+    }
+  
+    .gallery .row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .hero {
+      padding: 8rem 1rem;
+    }
+  }
+  

@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-light;
+  color: $secondary-color;
+  @include font-style(16px, normal);
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}

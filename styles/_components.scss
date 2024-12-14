@@ -1,0 +1,80 @@
+@import 'variables';
+@import 'mixins';
+@import 'extend';
+
+.main-header {
+  background-color: $background-light;
+
+  .navbar-brand {
+    @include font-style(1.5rem, bold);
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .nav-link {
+    @include font-style(1rem, normal);
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.hero {
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  animation: fade-in 0.5s ease-out;
+
+  h1 {
+    @extend %centered-title;
+    color: white;
+  }
+
+  p {
+    @include font-style(1rem);
+  }
+
+  .btn {
+    @include button(white, $primary-color);
+  }
+}
+
+.gallery {
+  padding: 2rem 0;
+
+  h2 {
+    @extend %centered-title;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @each $name, $color in $gallery-colors {
+    .#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+footer {
+  background-color: darken($background-light, 5%);
+  padding: 1rem 0;
+  @include font-style(0.875rem);
+}
